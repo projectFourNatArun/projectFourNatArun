@@ -59,21 +59,14 @@ weatherApp.getWeather = function(location){
                 days: 5
             }
         }).then(function(result){
-            console.log(result);
-            weatherApp.displayWeather(result);
-            
+            const res = result;
+            console.log("results", res);
+            // weatherApp.displayWeather(results);
         })
         
     });
 
 }
-
-// weatherApp.displayWeather = function(result){
-//     result.
-// }
-
-
-//display result 
 
 
 weatherApp.init = function(){
