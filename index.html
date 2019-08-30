@@ -8,27 +8,20 @@
     <link rel="stylesheet" href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.10.3/themes/flick/jquery-ui.css" />
     <title>Document</title>
 </head>
-<body>
+<body>  
+    <div class="wrapper searchBlock">
+        <p>Please enter your city</p> 
+        <input class="" type="text" name="" value="" id="jsElemCity" />
+        <p>How many days</p>
+    </div>
+    
+    <div id="jsWeek">
+        <h2 id="jsCityName"></h2>
+        <div id="jsWeekContainer" class="weekContainer"></div>
+    </div>
     
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
     <script src="./script.js"></script>
-
-    
-
-    <div class="wrapper searchBlock">
-        <form action="" method="post" name="form_citydetails" id="form_citydetails" enctype="multipart/form-data" onsubmit="return false;">
-        <p>Please enter your city</p> <input class="ff_elem" type="text" name="ff_nm_from[]" value="" id="jsElemCity"/>
-        <p>How many days</p> 
-        
-    
-        <input type="submit" name="submit" id="jsElemCity" value="search">
-        </form> 
-    </div>
-
-    <div id="day">
-
-    </div>
-
 </body>
 </html>
