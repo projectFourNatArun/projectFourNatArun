@@ -3,9 +3,10 @@ html {
 }
 
 .wrapper {
-    max-width: 1100px;
+    max-width: 1200px;
     width: 90%;
     margin: 0 auto;
+    
 }
 
 .ui-menu .ui-menu-item a,
@@ -20,7 +21,7 @@ html {
 .ui-autocomplete-loading { 
     background: white url("/assets/loading-ui.gif") right center no-repeat; 
 }
-     
+
 input[type=text] { 
     padding: 0.5rem 1rem;
     border: 0.2rem solid black; 
