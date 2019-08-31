@@ -180,7 +180,25 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 }
 
 html {
-  font-size: 125%;
+  font-size: 62.5%;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+body {
+  font-size: 2rem;
+}
+
+h1 {
+  font-size: 6rem;
+  font-family: 'Raleway', sans-serif;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+body {
+  background-color: lightblue;
 }
 
 .wrapper {
@@ -231,6 +249,32 @@ input[type=text] {
   text-align: center;
 }
 
-h2 {
-  text-align: center;
+.mainScreen {
+  max-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.flexHeader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
