@@ -54,7 +54,9 @@ weatherApp.getWeather = function (location) {
 weatherApp.displayWeather = function (forecast, location) {
     $('.searchBlock').addClass('smallSearch');
     $('#jsCityName').html(`${location.name}, ${location.region}`);
+    $('input').val('');
     $('#jsWeekContainer').empty();
+    $('#jsDetailedView').empty();
     forecast.forEach(function (day, index) {
         weatherApp.weatherDayView(day, index);
     });
