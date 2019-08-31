@@ -1,5 +1,6 @@
-html {
-    font-size: 125%;
+body {
+   
+   background-color: lightblue;
 }
 
 .wrapper {
@@ -44,10 +45,21 @@ input[type=text] {
     text-align: center;
 }
 
-// Typography
-h2 {
-    text-align: center;
+.mainScreen {
+    max-height: 100vh;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
 }
+
+.flexHeader {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+
 
 
 

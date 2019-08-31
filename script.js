@@ -52,11 +52,11 @@ weatherApp.getWeather = function (location) {
 
 // Display forecast on the page
 weatherApp.displayWeather = function (forecast, location) {
-    $('.searchBlock').addClass('smallSearch');
     $('#jsCityName').html(`${location.name}, ${location.region}`);
     $('input').val('');
     $('#jsWeekContainer').empty();
     $('#jsDetailedView').empty();
+    $('.mainScreen').addClass('flexHeader');
     forecast.forEach(function (day, index) {
         weatherApp.weatherDayView(day, index);
     });
@@ -97,7 +97,7 @@ $('#jsWeekContainer').on('click', '.dayContainer', function() {
         <div>
             <p>Humidity: ${data.day.avghumidity}%</p>
             <p>Wind: ${data.day.maxwind_kph} km/h</p>
-            <p>UV: ${data.day.uv} km/h</p>
+            <p>UV: ${data.day.uv}</p>
         </div> 
     `);    
 });
