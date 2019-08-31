@@ -184,7 +184,8 @@ html {
 }
 
 .wrapper {
-  width: 80%;
+  max-width: 1100px;
+  width: 90%;
   margin: 0 auto;
 }
 
@@ -206,16 +207,30 @@ input[type=text] {
   border: 0.2rem solid black;
 }
 
-input[type=submit] {
-  padding: 0.5rem 1rem;
-  background: white;
-  border: 0.2rem solid black;
-  text-transform: capitalize;
-  margin-left: 1rem;
-}
-
 .weekContainer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.dayContainer {
+  cursor: pointer;
+  border: 1px solid black;
+  text-align: center;
+}
+
+.detailedView {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
 }
