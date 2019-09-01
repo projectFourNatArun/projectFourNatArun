@@ -1,10 +1,10 @@
-
+// App namespace to hold all methods
 const weatherApp = {};
 
 weatherApp.baseUrl = `http://api.apixu.com/v1/forecast.json`;
 weatherApp.apiKey = `54437cb447384a0289e193947192808`;
 
-
+// Function for autocomplete
 weatherApp.formComplete = function () {
 
     $("#jsElemCity").autocomplete({
@@ -32,6 +32,7 @@ weatherApp.formComplete = function () {
     });
 }
 
+// Ajax request with user input
 weatherApp.getWeather = function (location) {
     $.ajax({
         url: weatherApp.baseUrl,
@@ -44,7 +45,6 @@ weatherApp.getWeather = function (location) {
             days: 5
         }
     }).then(function (result) {
-        console.log("results", result);
         weatherApp.forecastData = result.forecast.forecastday;
         weatherApp.displayWeather(weatherApp.forecastData, result.location);
     })
@@ -78,35 +78,39 @@ weatherApp.weatherDayView = function (item, index) {
         <div class="dayContainer" data-index="${index}">
             <p>${weatherApp.formatDate(item.date)}</p>
             <img src="${item.day.condition.icon}" alt="${item.day.condition.text}">
-            <p>${item.day.mintemp_c} &#176C</p>
-            <p>${item.day.maxtemp_c} &#176C</p>
+            <p><span class="value">${Math.round(item.day.maxtemp_c)} &#176;</span> <span class="minTemp">${Math.round(item.day.mintemp_c)} &#176;</span></p>
         </div>  
     `);
 }
 
+// Display weather of the day 
 weatherApp.displayDayDetail = function (data) {
     $('#jsDetailedView').empty();
     $('#jsDetailedView').append(`
-        <div>
-            <p class="averageTemp">${data.day.avgtemp_c} &#176C</p>
-            <p>Min ${data.day.mintemp_c} &#176C</p>
-            <p>Max ${data.day.maxtemp_c} &#176C</p>
+        <div class="dayBlock dayBlockOne">
+            <p class="averageTemp">${Math.round(data.day.avgtemp_c)} <span class="avg">&#176;C</span></p>
+            <p>Max ${Math.round(data.day.maxtemp_c)} &#176; Min ${Math.round(data.day.mintemp_c)} &#176;</p> 
+            <p>Sunrise <span class="value">${data.astro.sunrise}</span></p>
+            <p>Sunset <span class="value">${data.astro.sunset}</span></p>
         </div>
-        <div>
-            <p>${weatherApp.formatDate(data.date)}</p>
-            <img src="${data.day.condition.icon}" alt="${data.day.condition.text}">
+        <div class="dayBlock dayBlockTwo">
+            <p class="date">${weatherApp.formatDate(data.date)}</p>
+            <div class="dayIcon">
+                <img src="${data.day.condition.icon}" alt="${data.day.condition.text}">
+            </div>
             <p>${data.day.condition.text}</p>
-            <p>Sunrise: ${data.astro.sunrise}</p>
-            <p>Sunset: ${data.astro.sunset}</p>
         </div>
-        <div>
-            <p>Humidity: ${data.day.avghumidity}%</p>
-            <p>Wind: ${data.day.maxwind_kph} km/h</p>
-            <p>UV: ${data.day.uv}</p>
+        <div class="dayBlock dayBlockThree">
+            <p>Humidity <span class="value">${data.day.avghumidity}%</span></p>
+            <p>Wind <span class="value">${data.day.maxwind_kph} km/h</span></p>
+            <p>UV <span class="value">${data.day.uv}</span></p>
+            <p>Rain <span class="value">${data.day.totalprecip_mm} mm</span></p>
+            <p>Visibility <span class="value">${data.day.avgvis_km} mm</span></p>
         </div> 
     `);    
 }
 
+// Event listener for when user clicks on the desired day to view more details
 $('#jsWeekContainer').on('click', '.dayContainer', function() {
     // Find the index of the day 
     const dayIndex = $(this).data('index');
@@ -121,7 +125,6 @@ weatherApp.init = function () {
 
 $('document').ready(function () {
     weatherApp.init();
-    // weatherApp.getWeather('Toronto, ON, Canada');
 });
 
 

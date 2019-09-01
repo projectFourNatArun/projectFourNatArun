@@ -5,6 +5,15 @@
     margin: 0 auto;
 }
 
+.innerWrapper {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+img {
+    width: 100%;
+}
+
 .hidden {
     display: none;
 }
@@ -37,7 +46,11 @@ body {
     font-weight: normal;
     margin: -1px;
     text-align:left;
-    font-size:14px;
+    font-size: 1.4rem;
+}
+
+.mainScreen:not(.flexHeader) .searchBlock {
+    width: 50%;
 }
 
 .ui-autocomplete-loading { 
@@ -46,7 +59,11 @@ body {
 
 input[type=text] { 
     padding: 0.5rem 1rem;
-    border: 0.2rem solid black; 
+    width: 100%;
+
+    &:focus {
+        outline: 2px solid lightblue;
+    }
 } 
 
 // Weather individual day styles
@@ -54,17 +71,42 @@ input[type=text] {
     display: flex;
     justify-content: center;
     text-align: center;
+
+    .dayBlock {
+        padding: 15px;
+        flex-shrink: 0;
+    }
+
+    .dayBlockOne,
+    .dayBlockThree {
+        width: 25%;
+    }
+
+    .dayBlockTwo {
+        width: 50%;
+
+        p {
+            font-weight: 400;
+        }
+    }
+}
+
+.dayIcon {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
 }
 
 .averageTemp {
-    font-size: 5rem;
+    margin: 0;
+
+    span.avg {
+        position: relative;
+        top: -30px;
+    }
 }
 
 // Weather week styles
-h2 {
-    text-align: center;
-}
-
 .dayContainer {
     cursor: pointer;
     text-align: center;

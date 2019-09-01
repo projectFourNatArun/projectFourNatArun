@@ -197,12 +197,41 @@ h1 {
 
 h2 {
   font-size: 3rem;
+  text-align: center;
+}
+
+.averageTemp {
+  font-size: 6rem;
+  font-weight: 600;
+}
+
+span.maxTemp,
+.dayBlockTwo .date {
+  font-size: 2.4rem;
+}
+
+span.minTemp,
+span.avg {
+  font-size: 1.6rem;
+}
+
+.value {
+  font-weight: 400;
 }
 
 .wrapper {
   max-width: 1200px;
   width: 90%;
   margin: 0 auto;
+}
+
+.innerWrapper {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+img {
+  width: 100%;
 }
 
 .hidden {
@@ -253,7 +282,11 @@ body {
   font-weight: normal;
   margin: -1px;
   text-align: left;
-  font-size: 14px;
+  font-size: 1.4rem;
+}
+
+.mainScreen:not(.flexHeader) .searchBlock {
+  width: 50%;
 }
 
 .ui-autocomplete-loading {
@@ -262,7 +295,11 @@ body {
 
 input[type=text] {
   padding: 0.5rem 1rem;
-  border: 0.2rem solid black;
+  width: 100%;
+}
+
+input[type=text]:focus {
+  outline: 2px solid lightblue;
 }
 
 .detailedView {
@@ -275,12 +312,38 @@ input[type=text] {
   text-align: center;
 }
 
-.averageTemp {
-  font-size: 5rem;
+.detailedView .dayBlock {
+  padding: 15px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
 }
 
-h2 {
-  text-align: center;
+.detailedView .dayBlockOne,
+.detailedView .dayBlockThree {
+  width: 25%;
+}
+
+.detailedView .dayBlockTwo {
+  width: 50%;
+}
+
+.detailedView .dayBlockTwo p {
+  font-weight: 400;
+}
+
+.dayIcon {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+}
+
+.averageTemp {
+  margin: 0;
+}
+
+.averageTemp span.avg {
+  position: relative;
+  top: -30px;
 }
 
 .dayContainer {
