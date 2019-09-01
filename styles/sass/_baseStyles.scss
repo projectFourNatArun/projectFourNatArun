@@ -1,52 +1,23 @@
-body {
-   
-   background-color: lightblue;
-}
-
+// General styles
 .wrapper {
     max-width: 1200px;
     width: 90%;
     margin: 0 auto;
-    
 }
 
-.ui-menu .ui-menu-item a,
-.ui-menu .ui-menu-item a.ui-state-hover, 
-.ui-menu .ui-menu-item a.ui-state-active {
-            font-weight: normal;
-            margin: -1px;
-            text-align:left;
-            font-size:14px;
-            }
-
-.ui-autocomplete-loading { 
-    background: white url("/assets/loading-ui.gif") right center no-repeat; 
+.hidden {
+    display: none;
 }
 
-input[type=text] { 
-    padding: 0.5rem 1rem;
-    border: 0.2rem solid black; 
-} 
-
-.weekContainer {
-    display: flex;
-    justify-content: space-around;
+body {
+   background-image: linear-gradient(to bottom, rgba(66, 138, 206, 0.5)), url(../assets/bgImg.jpg);
+   background-size: cover;
+   background-color: lightblue;
 }
 
-.dayContainer {
-    cursor: pointer;
-    border: 1px solid black;
-    text-align: center;
-}
-
-.detailedView {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-}
-
+// Main page styles
 .mainScreen {
-    max-height: 100vh;
+    height: 100vh;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
@@ -57,9 +28,59 @@ input[type=text] {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
+    height: unset;
 }
 
+.ui-menu .ui-menu-item a,
+.ui-menu .ui-menu-item a.ui-state-hover, 
+.ui-menu .ui-menu-item a.ui-state-active {
+    font-weight: normal;
+    margin: -1px;
+    text-align:left;
+    font-size:14px;
+}
 
+.ui-autocomplete-loading { 
+    background: white url("/assets/loading-ui.gif") right center no-repeat; 
+}
 
+input[type=text] { 
+    padding: 0.5rem 1rem;
+    border: 0.2rem solid black; 
+} 
 
+// Weather individual day styles
+.detailedView {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
 
+.averageTemp {
+    font-size: 5rem;
+}
+
+// Weather week styles
+h2 {
+    text-align: center;
+}
+
+.dayContainer {
+    cursor: pointer;
+    text-align: center;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.3);
+    padding: 0 20px; 
+    transition: all 0.5s ease;
+
+    &:hover {
+       background: rgba(255, 255, 255, 0.7); 
+       transform: scale(1.05);
+       box-shadow: 0 0 8px 0 black;
+    }
+}
+
+.weekContainer {
+    display: flex;
+    justify-content: space-around;
+}
