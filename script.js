@@ -50,6 +50,14 @@ weatherApp.getWeather = function (location) {
     })
 }
 
+// Format date
+weatherApp.formatDate = function(date) {
+    const options = {month: 'short', day: 'numeric', weekday: 'short'};
+    const newDate = new Date(date);
+
+    return newDate.toLocaleDateString("en-US", options);
+}
+
 // Display forecast on the page
 weatherApp.displayWeather = function (forecast, location) {
     $('#jsCityName').html(`${location.name}, ${location.region}`);
@@ -57,38 +65,35 @@ weatherApp.displayWeather = function (forecast, location) {
     $('#jsWeekContainer').empty();
     $('#jsDetailedView').empty();
     $('.mainScreen').addClass('flexHeader');
+    $('#jsWeek').removeClass('hidden');
     forecast.forEach(function (day, index) {
         weatherApp.weatherDayView(day, index);
     });
+    weatherApp.displayDayDetail(forecast[0]);
 }
 
 // Display weather of the day for the week
 weatherApp.weatherDayView = function (item, index) {
     $('#jsWeekContainer').append(`
         <div class="dayContainer" data-index="${index}">
-            <p>${item.date}</p>
+            <p>${weatherApp.formatDate(item.date)}</p>
             <img src="${item.day.condition.icon}" alt="${item.day.condition.text}">
-            <p>${item.day.mintemp_c}C</p>
-            <p>${item.day.maxtemp_c}C</p>
+            <p>${item.day.mintemp_c} &#176C</p>
+            <p>${item.day.maxtemp_c} &#176C</p>
         </div>  
     `);
 }
 
-$('#jsWeekContainer').on('click', '.dayContainer', function() {
-    // Find the index of the day 
-    const dayIndex = $(this).data('index');
-    // weather info for the array clicked
-    const data = weatherApp.forecastData[dayIndex];
-
+weatherApp.displayDayDetail = function (data) {
     $('#jsDetailedView').empty();
     $('#jsDetailedView').append(`
         <div>
-            <p>Avg. Temp ${data.day.avgtemp_c}</p>
-            <p>Min Temp ${data.day.mintemp_c}</p>
-            <p>Max Temp ${data.day.maxtemp_c}</p>
+            <p class="averageTemp">${data.day.avgtemp_c} &#176C</p>
+            <p>Min ${data.day.mintemp_c} &#176C</p>
+            <p>Max ${data.day.maxtemp_c} &#176C</p>
         </div>
         <div>
-            <p>${data.date}</p>
+            <p>${weatherApp.formatDate(data.date)}</p>
             <img src="${data.day.condition.icon}" alt="${data.day.condition.text}">
             <p>${data.day.condition.text}</p>
             <p>Sunrise: ${data.astro.sunrise}</p>
@@ -100,6 +105,14 @@ $('#jsWeekContainer').on('click', '.dayContainer', function() {
             <p>UV: ${data.day.uv}</p>
         </div> 
     `);    
+}
+
+$('#jsWeekContainer').on('click', '.dayContainer', function() {
+    // Find the index of the day 
+    const dayIndex = $(this).data('index');
+    // weather info for the array clicked
+    const data = weatherApp.forecastData[dayIndex];
+    weatherApp.displayDayDetail(data);
 });
 
 weatherApp.init = function () {
@@ -108,6 +121,7 @@ weatherApp.init = function () {
 
 $('document').ready(function () {
     weatherApp.init();
+    // weatherApp.getWeather('Toronto, ON, Canada');
 });
 
 
