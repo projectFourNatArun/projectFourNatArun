@@ -6,7 +6,7 @@ weatherApp.apiKey = `54437cb447384a0289e193947192808`;
 
 // Function for autocomplete
 weatherApp.formComplete = function () {
-
+    // Credit http://geobytes.com/free-ajax-cities-jsonp-api/
     $("#jsElemCity").autocomplete({
         source: function (request, response) {
             $.getJSON(
@@ -21,14 +21,6 @@ weatherApp.formComplete = function () {
         select: function (event, ui) {
             weatherApp.getWeather(ui.item.value);
         },
-
-        open: function () {
-            $(this).removeClass("ui-corner-all").addClass("ui-corner-top");
-        },
-
-        close: function () {
-            $(this).removeClass("ui-corner-top").addClass("ui-corner-all");
-        }
     });
 }
 
@@ -47,12 +39,16 @@ weatherApp.getWeather = function (location) {
     }).then(function (result) {
         weatherApp.forecastData = result.forecast.forecastday;
         weatherApp.displayWeather(weatherApp.forecastData, result.location);
-    })
+    }).fail(function (err) {
+        console.log(err);
+        $('#jsError').removeClass('hidden');
+        $('#jsError').text(`${err.responseJSON.error.message}`);
+    });
 }
 
 // Format date
 weatherApp.formatDate = function(date) {
-    const options = {month: 'short', day: 'numeric', weekday: 'short'};
+    const options = {month: 'short', day: 'numeric', weekday: 'short', timeZone: 'UTC'};
     const newDate = new Date(date);
 
     return newDate.toLocaleDateString("en-US", options);
@@ -75,13 +71,13 @@ weatherApp.displayWeather = function (forecast, location) {
 // Display weather of the day for the week
 weatherApp.weatherDayView = function (item, index) {
     $('#jsWeekContainer').append(`
-        <div class="dayContainer" data-index="${index}">
+        <button class="dayContainer" data-index="${index}">
             <p>${weatherApp.formatDate(item.date)}</p>
             <div class=dayContent>
-            <img src="${item.day.condition.icon}" alt="${item.day.condition.text}">
-            <p><span class="value">${Math.round(item.day.maxtemp_c)} &#176;</span> <span class="minTemp">${Math.round(item.day.mintemp_c)} &#176;</span></p>
+                <img src="${item.day.condition.icon}" alt="${item.day.condition.text}">
+                <p><span class="value">${Math.round(item.day.maxtemp_c)} &#176;</span> <span class="minTemp">${Math.round(item.day.mintemp_c)} &#176;</span></p>
             </div>
-        </div>  
+        </button>  
     `);
 }
 

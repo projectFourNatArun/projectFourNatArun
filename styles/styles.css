@@ -232,6 +232,10 @@ span.avg {
   margin: 0 auto;
 }
 
+button {
+  border: none;
+}
+
 img {
   width: 100%;
 }
@@ -281,9 +285,7 @@ body {
 .ui-menu .ui-menu-item a,
 .ui-menu .ui-menu-item a.ui-state-hover,
 .ui-menu .ui-menu-item a.ui-state-active {
-  font-weight: normal;
   margin: -1px;
-  text-align: left;
   font-size: 1.4rem;
 }
 
@@ -304,6 +306,12 @@ input[type=text]:focus {
   outline: 2px solid lightblue;
 }
 
+.detailedView,
+.dayContainer,
+.error {
+  text-align: center;
+}
+
 .detailedView {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -311,7 +319,6 @@ input[type=text]:focus {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  text-align: center;
 }
 
 .detailedView .dayBlock {
@@ -355,7 +362,6 @@ input[type=text]:focus {
 
 .dayContainer {
   cursor: pointer;
-  text-align: center;
   border-radius: 4px;
   background: rgba(255, 255, 255, 0.3);
   padding: 0 20px;
@@ -363,7 +369,7 @@ input[type=text]:focus {
   transition: all 0.5s ease;
 }
 
-.dayContainer:hover {
+.dayContainer:hover, .dayContainer:focus {
   background: rgba(255, 255, 255, 0.7);
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
@@ -379,10 +385,10 @@ input[type=text]:focus {
       justify-content: space-around;
 }
 
-@media all and (min-width: 1500px) {
-  html {
-    font-size: 100%;
-  }
+.error {
+  background: red;
+  padding: 1rem;
+  color: white;
 }
 
 @media all and (min-width: 630px) and (max-width: 749px) {
