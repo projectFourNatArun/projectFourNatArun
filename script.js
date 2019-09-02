@@ -1,7 +1,7 @@
 // App namespace to hold all methods
 const weatherApp = {};
 
-weatherApp.baseUrl = `http://api.apixu.com/v1/forecast.json`;
+weatherApp.baseUrl = `http://api.apixu.com/v1/forecast.json`; //API from https://www.apixu.com/
 weatherApp.apiKey = `54437cb447384a0289e193947192808`;
 
 // Function for autocomplete
