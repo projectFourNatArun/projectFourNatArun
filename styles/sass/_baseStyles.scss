@@ -82,6 +82,12 @@ input[type=text] {
         width: 25%;
     }
 
+    .dayBlockThree{
+        p {
+            margin-top: 0;
+        }
+    }
+
     .dayBlockTwo {
         width: 50%;
 
@@ -102,7 +108,8 @@ input[type=text] {
 
     span.avg {
         position: relative;
-        top: -30px;
+        top: -20px;
+        font-size: 2rem;
     }
 }
 
