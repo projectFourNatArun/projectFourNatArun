@@ -1,28 +1,15 @@
 
 // Responsive styles added here
 
-
-// For very large screens
-@media all and (min-width:1500px) {
-    html {
-        font-size: 100%;
-    }
-}
-
-
-
 @media all and (min-width:630px) and (max-width:749px) {
-
     html {
         font-size: 50%;
     }
-
 }
 
 // for smaller screen phones
 
 @media all and (min-width:501px) and (max-width:629px) {
-
     html {
         font-size: 45%;
     }
@@ -32,17 +19,21 @@
         img {
             width: inherit;
         }
+
         .dayContainer {
             margin-block: 1.5rem;
         }
+
         .dayContainer .dayContent {
             display: flex;
             flex-flow: row nowrap;
             justify-content: space-around;
+
             .minTemp,
             .value {
                 font-size: 3rem;
             }
+
             img {
                 padding-bottom: 2rem;
             }
@@ -50,39 +41,39 @@
     }
 }
 
-
-
-
 @media all and (min-width:421px) and (max-width: 500px) {
     html {
         font-size: 45%;
     }
 
-
     .flexHeader {
         flex-flow: column nowrap;
-        
     }
 
     h2 {
         margin: 2rem;
     }
+
     .weekContainer {
         flex-flow: column nowrap;
         img {
             width: inherit;
         }
+
         .dayContainer {
             margin-bottom: 1.5rem;
         }
+
         .dayContainer .dayContent {
             display: flex;
             flex-flow: row nowrap;
             justify-content: space-around;
+
             .minTemp,
             .value {
                 font-size: 3rem;
             }
+
             img {
                 padding-bottom: 2rem;
             }
@@ -92,15 +83,12 @@
 
 
 @media all and (min-width:350px) and (max-width:420px) {
-
     html {
         font-size: 45%;
     }
 
-
     .flexHeader {
-        flex-flow: column nowrap;
-        
+        flex-flow: column nowrap;  
     }
 
     h2 {
@@ -109,47 +97,48 @@
 
     .averageTemp {
         font-size: 3rem;
+
         span.avg{
             font-size: 2rem;
             top: -5px;
         }
     }
 
-
     .weekContainer {
         flex-flow: column nowrap;
+
         img {
             width: inherit;
         }
+
         .dayContainer {
             margin-bottom: 1.5rem;
         }
+
         .dayContainer .dayContent {
             display: flex;
             flex-flow: row nowrap;
             justify-content: space-around;
+
             .minTemp,
             .value {
                 font-size: 3rem;
             }
+
             img {
                 padding-bottom: 2rem;
             }
         }
     } 
-
 }
 
 @media all and (min-width:300px) and (max-width:349px) {
-
     html {
         font-size: 40%;
     }
 
-
     .flexHeader {
         flex-flow: column nowrap;
-        
     }
 
     h2 {
@@ -166,20 +155,25 @@
 
     .weekContainer {
         flex-flow: column nowrap;
+
         img {
             width: inherit;
         }
+
         .dayContainer {
             margin-bottom: 1.5rem;
         }
+
         .dayContainer .dayContent {
             display: flex;
             flex-flow: row nowrap;
             justify-content: space-around;
+
             .minTemp,
             .value {
                 font-size: 3rem;
             }
+            
             img {
                 padding-bottom: 2rem;
             }
