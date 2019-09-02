@@ -192,12 +192,14 @@ body {
 
 h1 {
   font-size: 6rem;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 0.5rem;
 }
 
 h2 {
   font-size: 3rem;
   text-align: center;
+  margin: 0;
 }
 
 .averageTemp {
@@ -323,6 +325,10 @@ input[type=text]:focus {
   width: 25%;
 }
 
+.detailedView .dayBlockThree p {
+  margin-top: 0;
+}
+
 .detailedView .dayBlockTwo {
   width: 50%;
 }
@@ -343,7 +349,8 @@ input[type=text]:focus {
 
 .averageTemp span.avg {
   position: relative;
-  top: -30px;
+  top: -20px;
+  font-size: 2rem;
 }
 
 .dayContainer {
@@ -370,4 +377,201 @@ input[type=text]:focus {
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+}
+
+@media all and (min-width: 1500px) {
+  html {
+    font-size: 100%;
+  }
+}
+
+@media all and (min-width: 630px) and (max-width: 749px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media all and (min-width: 501px) and (max-width: 629px) {
+  html {
+    font-size: 45%;
+  }
+  .weekContainer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+  }
+  .weekContainer img {
+    width: inherit;
+  }
+  .weekContainer .dayContainer {
+    margin-block: 1.5rem;
+  }
+  .weekContainer .dayContainer .dayContent {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .weekContainer .dayContainer .dayContent .minTemp,
+  .weekContainer .dayContainer .dayContent .value {
+    font-size: 3rem;
+  }
+  .weekContainer .dayContainer .dayContent img {
+    padding-bottom: 2rem;
+  }
+}
+
+@media all and (min-width: 421px) and (max-width: 500px) {
+  html {
+    font-size: 45%;
+  }
+  .flexHeader {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+  }
+  h2 {
+    margin: 2rem;
+  }
+  .weekContainer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+  }
+  .weekContainer img {
+    width: inherit;
+  }
+  .weekContainer .dayContainer {
+    margin-bottom: 1.5rem;
+  }
+  .weekContainer .dayContainer .dayContent {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .weekContainer .dayContainer .dayContent .minTemp,
+  .weekContainer .dayContainer .dayContent .value {
+    font-size: 3rem;
+  }
+  .weekContainer .dayContainer .dayContent img {
+    padding-bottom: 2rem;
+  }
+}
+
+@media all and (min-width: 350px) and (max-width: 420px) {
+  html {
+    font-size: 45%;
+  }
+  .flexHeader {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+  }
+  h2 {
+    margin: 2rem;
+  }
+  .averageTemp {
+    font-size: 3rem;
+  }
+  .averageTemp span.avg {
+    font-size: 2rem;
+    top: -5px;
+  }
+  .weekContainer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+  }
+  .weekContainer img {
+    width: inherit;
+  }
+  .weekContainer .dayContainer {
+    margin-bottom: 1.5rem;
+  }
+  .weekContainer .dayContainer .dayContent {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .weekContainer .dayContainer .dayContent .minTemp,
+  .weekContainer .dayContainer .dayContent .value {
+    font-size: 3rem;
+  }
+  .weekContainer .dayContainer .dayContent img {
+    padding-bottom: 2rem;
+  }
+}
+
+@media all and (min-width: 300px) and (max-width: 349px) {
+  html {
+    font-size: 40%;
+  }
+  .flexHeader {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+  }
+  h2 {
+    margin: 2rem;
+  }
+  .averageTemp {
+    font-size: 3rem;
+  }
+  .averageTemp span.avg {
+    font-size: 2rem;
+    top: -5px;
+  }
+  .weekContainer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+  }
+  .weekContainer img {
+    width: inherit;
+  }
+  .weekContainer .dayContainer {
+    margin-bottom: 1.5rem;
+  }
+  .weekContainer .dayContainer .dayContent {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .weekContainer .dayContainer .dayContent .minTemp,
+  .weekContainer .dayContainer .dayContent .value {
+    font-size: 3rem;
+  }
+  .weekContainer .dayContainer .dayContent img {
+    padding-bottom: 2rem;
+  }
 }

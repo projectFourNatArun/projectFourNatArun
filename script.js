@@ -77,8 +77,10 @@ weatherApp.weatherDayView = function (item, index) {
     $('#jsWeekContainer').append(`
         <div class="dayContainer" data-index="${index}">
             <p>${weatherApp.formatDate(item.date)}</p>
+            <div class=dayContent>
             <img src="${item.day.condition.icon}" alt="${item.day.condition.text}">
             <p><span class="value">${Math.round(item.day.maxtemp_c)} &#176;</span> <span class="minTemp">${Math.round(item.day.mintemp_c)} &#176;</span></p>
+            </div>
         </div>  
     `);
 }
@@ -105,7 +107,7 @@ weatherApp.displayDayDetail = function (data) {
             <p>Wind <span class="value">${data.day.maxwind_kph} km/h</span></p>
             <p>UV <span class="value">${data.day.uv}</span></p>
             <p>Rain <span class="value">${data.day.totalprecip_mm} mm</span></p>
-            <p>Visibility <span class="value">${data.day.avgvis_km} mm</span></p>
+            <p>Visibility <span class="value">${data.day.avgvis_km} km</span></p>
         </div> 
     `);    
 }
